@@ -1,4 +1,17 @@
-//decisoes e repeticoes
+//for
+
+for(let i = 0; i < 5; i++) {
+	console.log(i);
+}
+
+let n = 2;
+while (n < 6) {
+	console.log(n);
+	n++;
+}
+
+
+/*decisoes e repeticoes
 const num: number = 15;
 
 if (num > 15) {
@@ -24,7 +37,7 @@ const usuario = 'admin';
 validateUser(usuario)
 validateUser('student')
 validateUser('viewer')
-
+*/
 /*
 variaveis e tipos
 let b: string = 'b';
