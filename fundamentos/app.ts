@@ -1,20 +1,32 @@
-const array: Array<number> = [1, 2, 3, 4];
+const array: Array<number> = [1, 2, 4, 3];
 
-const stringArray: string[] = ['a', 'b', 'c'];
+array.forEach(num => {
+	if(num > 2 && num % 2 === 0) {
+		console.log(num * 2);
+	}
+});
+
+array.map(num => console.log(num));
+
+/*const stringArray: string[] = ['a', 'b', 'c'];
+
+const buscaNum = array.find(num => num > 2);
+
+console.log(buscaNum);*/
 
 //console.log(array[1]);
 
 //console.log(stringArray.length);
 
-console.log('array original', array);
+//console.log('array original', array);
 
-array.push(5);
+//array.push(5);
 
-console.log('array com novo elemento', array);
+//console.log('array com novo elemento', array);
 
-array.pop();
+//array.pop();
 
-console.log('retirando o ultimo elemento do array', array);
+//console.log('retirando o ultimo elemento do array', array);
 
 /*for
 
