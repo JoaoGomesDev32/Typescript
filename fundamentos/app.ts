@@ -1,11 +1,7 @@
-//Dio banking
-
-//name, accountNumber
-//depositar, sacar
-
-class Account {
+abstract class Account {
 	name: string
 	accountNumber: number
+	balance: number = 0
 
 	constructor(name: string, accountNumber: number) {
 		this.name = name
@@ -19,32 +15,20 @@ class Account {
 	withdraw = () => {
 		console.log('Você sacou');
 	}
-}
 
-const newAccount: Account = new Account('João', 1);
-console.log(newAccount);
-
-const account: Account = new Account('Denize', 28)
-account.deposit();
-
-
-/*class User {
-	name: string = 'João'
-	age: number = 36
-
-	constructor(name: string, age: number) {
-		this.name = name
-		this.age = age
-	}
-
-	showName = () => {
-		console.log(this.name)
+	getValue = () => {
+		console.log(this.balance);
 	}
 }
 
-const user: User = new User('João', 36);
-user.showName();
+class PeopleAccount extends Account {
+	doc_id: number
 
-const otherUser = new User('Denize', 37);
-otherUser.showName();
-*/
+	constructor(doc_id: number, name: string, accountNumber: number) {
+		super(name, accountNumber)
+		this.doc_id = doc_id
+	}
+}
+
+const peopleAccount: PeopleAccount = new PeopleAccount(1, 'João', 10);
+console.log(peopleAccount);
