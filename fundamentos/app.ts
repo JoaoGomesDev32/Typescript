@@ -1,111 +1,19 @@
-const array: Array<number> = [1, 2, 4, 3];
+class User {
+	name: string = 'João'
+	age: number = 36
 
-array.forEach(num => {
-	if(num > 2 && num % 2 === 0) {
-		console.log(num * 2);
+	constructor(name: string, age: number) {
+		this.name = name
+		this.age = age
 	}
-});
 
-array.map(num => console.log(num));
-
-/*const stringArray: string[] = ['a', 'b', 'c'];
-
-const buscaNum = array.find(num => num > 2);
-
-console.log(buscaNum);*/
-
-//console.log(array[1]);
-
-//console.log(stringArray.length);
-
-//console.log('array original', array);
-
-//array.push(5);
-
-//console.log('array com novo elemento', array);
-
-//array.pop();
-
-//console.log('retirando o ultimo elemento do array', array);
-
-/*for
-
-for(let i = 0; i < 5; i++) {
-	console.log(i);
+	showName = () => {
+		console.log(this.name)
+	}
 }
 
-let n = 2;
-while (n < 6) {
-	console.log(n);
-	n++;
-}
-*/
-/*decisoes e repeticoes
-const num: number = 15;
+const user = new User('João', 36);
+user.showName();
 
-if (num > 15) {
-	console.log('Num maior que 15')
-} else if (num === 15) {
-	console.log('Num igual a 15')
-} else {
-	console.log('Num menor que 15')
-}
-
-const typeUser = {
-	admin: 'Seja bem vindo admin',
-	student: 'Você é um estudante',
-	viewer: 'Você pode visualizar'
-}
-
-function validateUser(user: string) {
-	console.log(typeUser[user as keyof typeof typeUser])
-}
-
-const usuario = 'admin';
-
-validateUser(usuario)
-validateUser('student')
-validateUser('viewer')
-*/
-/*
-variaveis e tipos
-let b: string = 'b';
-let n: number = 2;
-let x: boolean = true;
-
-let m: any = 2;
-m = "João";
-m = false;
-*/
-
-/*interfaces e objetos
-interface Pessoa {
-	nome: string,
-	idade: number,
-	profissao?: string
-}
-
-const pessoa: Pessoa = {
-	nome: 'João',
-	idade: 36
-}
-
-const outraPessoa: Pessoa = {
-	nome: 'Paulo',
-	idade: 33,
-	profissao: 'Desenvolvedor'
-}
-
-const arrayPessoa: Array<Pessoa> = [
-	pessoa,
-	outraPessoa
-]
-
-const arrayNum: number[] = [
-	1, 2, 3
-]
-
-const arrayString: Array<string> = [
-	'1', '2', '3'
-]
-*/
+const otherUser = new User('Denize', 37);
+otherUser.showName();
