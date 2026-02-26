@@ -12,7 +12,7 @@ function App() {
     <Provider>
       <Card.Root maxW="lg" mx="auto" mt="20">
         <Card.Header>
-          <Card.Title>Faça o login</Card.Title>
+          <Card.Title color="purple" fontWeight="bold">Faça o login</Card.Title>
         </Card.Header>
         <Card.Body>
           <Stack gap="4" w="full">
@@ -21,14 +21,13 @@ function App() {
               <Input placeholder="Email" type="email"/>
             </Field.Root>
             <Field.Root>
-              <Field.Label>Password</Field.Label>
-              <Input placeholder="Password" type="password" />
+              <Field.Label>Senha</Field.Label>
+              <Input placeholder="Senha" type="password" />
             </Field.Root>
           </Stack>
         </Card.Body>
-        <Card.Footer justifyContent="flex-end">
-          <Button variant="outline">Cancel</Button>
-          <Button variant="solid">Sign in</Button>
+        <Card.Footer justifyContent="center">
+          <Button variant="solid" colorPalette="purple">Entrar</Button>
         </Card.Footer>
       </Card.Root>
     </Provider>
