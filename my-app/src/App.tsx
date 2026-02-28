@@ -6,6 +6,7 @@ import {
   Field,
   Stack
 } from "@chakra-ui/react"
+import { login } from "./services/login"
 
 function App() {
   return (
@@ -27,7 +28,7 @@ function App() {
           </Stack>
         </Card.Body>
         <Card.Footer justifyContent="center">
-          <Button variant="solid" colorPalette="purple">Entrar</Button>
+          <Button onClick={() => login()} variant="solid" colorPalette="purple">Entrar</Button>
         </Card.Footer>
       </Card.Root>
     </Provider>
