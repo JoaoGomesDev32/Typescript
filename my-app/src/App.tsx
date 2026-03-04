@@ -7,8 +7,11 @@ import {
   Stack
 } from "@chakra-ui/react"
 import { login } from "./services/login"
+import { useState } from "react"
 
 function App() {
+  const [value, setValue] = useState(0)
+  const [outroValor, setOutroValor] = useState(1)
   return (
     <Provider>
       <Card.Root maxW="lg" mx="auto" mt="20">
@@ -31,6 +34,17 @@ function App() {
           <Button onClick={() => login()} variant="solid" colorPalette="purple">Entrar</Button>
         </Card.Footer>
       </Card.Root>
+      <div>
+        <button onClick={() => setValue(value + 1)}>
+          Incrementar
+        </button>
+        <h1>{ value }</h1>
+
+        <button onClick={() => setOutroValor(outroValor + 1)}>
+          Incrementar
+        </button>
+        <h1>{ outroValor }</h1>
+      </div>
     </Provider>
   )
 }
