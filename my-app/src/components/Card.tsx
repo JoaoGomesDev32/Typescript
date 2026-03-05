@@ -4,11 +4,21 @@ import {
 	Center
   } from "@chakra-ui/react"
 import { login } from "../services/login"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { DButton } from "./DButton"
+import { api } from "../api"
 
 export const Card = () => {
 	const [ email, setEmail ] = useState(" ")
+
+	useEffect(() => {
+		const getData = async () => {
+			const data = await api
+			console.log(data)
+		}
+		
+		getData()
+	})
 
 	return (
 		<Box as="section" maxW="lg" mx="auto" mt="20">
