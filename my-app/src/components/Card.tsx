@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import {
 	Input,
 	Box,
@@ -8,17 +9,26 @@ import { useState, useEffect } from "react"
 import { DButton } from "./DButton"
 import { api } from "../api"
 
+interface UserData {
+	email: string,
+	password: string,
+	name: string
+}
+
 export const Card = () => {
-	const [ email, setEmail ] = useState(" ")
+	const [ email, setEmail ] = useState<string>(" ")
+	const [ userData, setUserData ] = useState<null | UserData>()
 
 	useEffect(() => {
 		const getData = async () => {
-			const data = await api
-			console.log(data)
+			const data: any | UserData = await api
+			setUserData(data)
 		}
-		
+
 		getData()
-	})
+	}, [])
+
+	console.log(userData)
 
 	return (
 		<Box as="section" maxW="lg" mx="auto" mt="20">
